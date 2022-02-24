@@ -1,0 +1,60 @@
+<?php
+
+//connect to DB 
+require 'database.php';
+
+//write a query to retrieve all students
+$query = 'SELECT * FROM students ORDER BY lastName';
+
+//prepare SQL statement for execution, returning PDO statement object.
+//data access in try catch block
+try{
+	$statement = $db->prepare($query);
+
+//execute query
+$statement->execute();
+
+//retrieve data from data set
+$students = $statement->fetchAll();
+
+//close connection
+$statement->closeCursor();
+} catch (Exception $e) {
+	$error_message->getMessage();
+	echo "Error Message " . $error_message;
+}
+?>
+
+<html>
+	<head>
+		<title> Recruitment DB</title>
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+	<body>
+		<h1> Students</h1>
+		<!--display student table-->
+		<table>
+			<thead>
+				<tr>
+					<th>Student ID</th>
+					<th>Last Name</th>
+					<th>First Name</th>
+					<th>Jag Number</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!--query the DB and return info into an array with fetch all-->
+				<!--loop thru array which is the result of query and display students-->
+				<?php foreach ($students as $student) :?>
+				<tr>
+					<td><?php echo $student['studentID']; ?></td>
+					<td><?php echo $student['lastName']; ?></td>
+					<td><?php echo $student['firstName']; ?></td>
+					<td><?php echo $student['jagNum']; ?></td>
+
+				</tr>
+				<?php endforeach; ?>
+			</tbody>
+		</table>
+	</body>
+</html>
