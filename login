@@ -1,7 +1,7 @@
 <?php>
 include("database.php");
 
-if(isset($_POST
+if(isset($_POST)
 
 ?>
 <html>
