@@ -40,6 +40,15 @@ $statement->closeCursor();
 					<th>Last Name</th>
 					<th>First Name</th>
 					<th>Jag Number</th>
+					<th>Birth Date</th>
+					<th>Phone Number</th>
+					<th>Email</th>
+					<th>Address</th>
+					<th>City</th>
+					<th>State</th>
+					<th>Country</th>
+					<th>Zip Code</th>
+					<th>Status</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -51,10 +60,20 @@ $statement->closeCursor();
 					<td><?php echo $student['lastName']; ?></td>
 					<td><?php echo $student['firstName']; ?></td>
 					<td><?php echo $student['jagNum']; ?></td>
+					<td><?php echo $student['birthdate']; ?></td>
+					<td><?php echo $student['phoneNum']; ?></td>
+					<td><?php echo $student['email']; ?></td>
+					<td><?php echo $student['address']; ?></td>
+					<td><?php echo $student['city']; ?></td>
+					<td><?php echo $student['state']; ?></td>
+					<td><?php echo $student['country']; ?></td>
+					<td><?php echo $student['zipCode']; ?></td>
+					<td><?php echo $student['status']; ?></td>
 
 				</tr>
 				<?php endforeach; ?>
 			</tbody>
 		</table>
+		<p><a href="add_student_form.php"> Add Student</a></p>
 	</body>
 </html>
