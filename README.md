@@ -3,13 +3,21 @@ In order to startup the webpage you need to go into phpMyAdmin you need to impor
 give that account full access to the DB otherwise it will not work
 
 Import recruitment.sql into phpMyAdmin
+
 Click on recruitment from the left side bar
+
 Go to privileges on the top nav menu
+
 Add user mgs_user
+
 password is pa55word
+
 Near the top you will see global database change password
+
 Go to database then select in the textfield recruitment
+
 Click go
+
 Should be able to view index.php
 
 *****NOTE ALL FILES NEED TO GO INTO THE FOLDER CONTENTS OF XAMPP/HTDOCS/
