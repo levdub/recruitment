@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 12, 2022 at 07:38 PM
+-- Generation Time: Mar 12, 2022 at 10:06 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -39,7 +39,7 @@ CREATE TABLE `activities` (
 --
 
 INSERT INTO `activities` (`activityID`, `activityDate`, `activityDesc`, `activityName`) VALUES
-(1, '2022-02-01', 'USA Day.', '');
+(1, '2022-02-01', 'Meet with graduate students around the school', 'USA Day.');
 
 -- --------------------------------------------------------
 
@@ -59,7 +59,8 @@ CREATE TABLE `communications` (
 --
 
 INSERT INTO `communications` (`commID`, `studentID`, `usersID`, `activityID`) VALUES
-(1, 20220201, 0, 0);
+(1, 1, 1, 1),
+(2, 1, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -87,7 +88,7 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`studentID`, `firstName`, `lastName`, `jagNum`, `birthdate`, `phoneNum`, `email`, `address`, `local`, `status`, `term`, `activitiesCounter`) VALUES
-(1, 'Test', 'Student1', NULL, '2022-02-01', '5551110000', 'test@student.com', 'Test Student Dr.', 0, 0, '', 30);
+(1, 'Test1', 'Student1', 'J00123456', '2022-02-01', '5551110000', 'test@student.com', 'Test Student Dr.', 1, 1, 'Fall 2022', 30);
 
 -- --------------------------------------------------------
 
@@ -108,8 +109,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`userID`, `username`, `password`, `email`, `privledgedRights`) VALUES
-(1, 'admin', 'pa55word', '', 0),
-(2, 'user', 'pa55word', '', 0);
+(1, 'admin', 'pa55word', 'Fakeadmin@jagmail.southalabama.edu123', 1),
+(2, 'user', 'pa55word', 'xxuser3100xx@gmail.yahoo.org.com', 0);
 
 --
 -- Indexes for dumped tables
@@ -156,7 +157,7 @@ ALTER TABLE `activities`
 -- AUTO_INCREMENT for table `communications`
 --
 ALTER TABLE `communications`
-  MODIFY `commID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `commID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `students`
