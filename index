@@ -2,7 +2,7 @@
 
 //connect to DB 
 require 'database.php';
-
+//----------------------------------------------------------------------------
 //write a query to retrieve all students
 $query = 'SELECT * FROM students ORDER BY lastName';
 
@@ -16,6 +16,69 @@ $statement->execute();
 
 //retrieve data from data set
 $students = $statement->fetchAll();
+
+//close connection
+$statement->closeCursor();
+} catch (Exception $e) {
+	$error_message->getMessage();
+	echo "Error Message " . $error_message;
+}
+//-----------------------------------------------------------------------------------
+//write a query to retrieve all activities
+$query = 'SELECT * FROM activities ORDER BY activityName';
+
+//prepare SQL statement for execution, returning PDO statement object.
+//data access in try catch block
+try{
+	$statement = $db->prepare($query);
+
+//execute query
+$statement->execute();
+
+//retrieve data from data set
+$activities = $statement->fetchAll();
+
+//close connection
+$statement->closeCursor();
+} catch (Exception $e) {
+	$error_message->getMessage();
+	echo "Error Message " . $error_message;
+}
+//-------------------------------------------------------------------------------------
+//write a query to retrieve all communications
+$query = 'SELECT * FROM communications ORDER BY studentID';
+
+//prepare SQL statement for execution, returning PDO statement object.
+//data access in try catch block
+try{
+	$statement = $db->prepare($query);
+
+//execute query
+$statement->execute();
+
+//retrieve data from data set
+$communications = $statement->fetchAll();
+
+//close connection
+$statement->closeCursor();
+} catch (Exception $e) {
+	$error_message->getMessage();
+	echo "Error Message " . $error_message;
+}
+//-------------------------------------------------------------------------------------
+//write a query to retrieve all users
+$query = 'SELECT * FROM users ORDER BY username';
+
+//prepare SQL statement for execution, returning PDO statement object.
+//data access in try catch block
+try{
+	$statement = $db->prepare($query);
+
+//execute query
+$statement->execute();
+
+//retrieve data from data set
+$users = $statement->fetchAll();
 
 //close connection
 $statement->closeCursor();
@@ -43,11 +106,10 @@ $statement->closeCursor();
 					<th>Birth Date</th>
 					<th>Phone Number</th>
 					<th>Email</th>
+					<th>local</th>
 					<th>Address</th>
-					<th>City</th>
-					<th>State</th>
-					<th>Country</th>
-					<th>Zip Code</th>
+					<th>Term</th>
+					<th>Days til next TP</th>
 					<th>Status</th>
 				</tr>
 			</thead>
@@ -63,17 +125,97 @@ $statement->closeCursor();
 					<td><?php echo $student['birthdate']; ?></td>
 					<td><?php echo $student['phoneNum']; ?></td>
 					<td><?php echo $student['email']; ?></td>
+					<td><?php echo $student['local']; ?></td>
 					<td><?php echo $student['address']; ?></td>
-					<td><?php echo $student['city']; ?></td>
-					<td><?php echo $student['state']; ?></td>
-					<td><?php echo $student['country']; ?></td>
-					<td><?php echo $student['zipCode']; ?></td>
+					<td><?php echo $student['term']; ?></td>
+					<td><?php echo $student['activitiesCounter']; ?></td>
 					<td><?php echo $student['status']; ?></td>
 
 				</tr>
 				<?php endforeach; ?>
 			</tbody>
 		</table>
+
+<!-- /////////////////////////////////////////////////////////////////////////// --!>
+		<h1> Activities</h1>
+		<!--display activities table-->
+		<table>
+			<thead>
+				<tr>
+					<th>activityID</th>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!--query the DB and return info into an array with fetch all-->
+				<!--loop thru array which is the result of query and display activities-->
+				<?php foreach ($activities as $activity) :?>
+				<tr>
+					<td><?php echo $activity['activityID']; ?></td>
+					<td><?php echo $activity['activityName']; ?></td>
+					<td><?php echo $activity['activityDesc']; ?></td>
+					<td><?php echo $activity['activityDate']; ?></td>
+				</tr>
+				<?php endforeach; ?>
+			</tbody>
+		</table>
+
+<!-- /////////////////////////////////////////////////////////////////////////// --!>
+		<h1> Communications</h1>
+		<!--display communications table-->
+		<table>
+			<thead>
+				<tr>
+					<th>Communication ID</th>
+					<th>Activity ID</th>
+					<th>User ID</th>
+					<th>Student ID</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!--query the DB and return info into an array with fetch all-->
+				<!--loop thru array which is the result of query and display communications-->
+				<?php foreach ($communications as $comm) :?>
+				<tr>
+					<td><?php echo $comm['commID']; ?></td>
+					<td><?php echo $comm['activityID']; ?></td>
+					<td><?php echo $comm['usersID']; ?></td>
+					<td><?php echo $comm['studentID']; ?></td>
+				</tr>
+				<?php endforeach; ?>
+			</tbody>
+		</table>
+<!-- /////////////////////////////////////////////////////////////////////////// --!>
+		<h1> Users</h1>
+		<!--display users table-->
+		<table>
+			<thead>
+				<tr>
+					<th>UserID</th>
+					<th>Username</th>
+					<th>Email</th>
+					<th>Password</th>
+				<!-- password should never be displayed anywhere. Im using it here just to show it. --!>
+					<th>Admin</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!--query the DB and return info into an array with fetch all-->
+				<!--loop thru array which is the result of query and display communications-->
+				<?php foreach ($users as $user) :?>
+				<tr>
+					<td><?php echo $user['userID']; ?></td>
+					<td><?php echo $user['username']; ?></td>
+					<td><?php echo $user['email']; ?></td>
+					<td><?php echo $user['password']; ?></td>
+					<td><?php echo $user['privledgedRights']; ?></td>
+				</tr>
+				<?php endforeach; ?>
+			</tbody>
+		</table>
+
 		<p><a href="add_student_form.php"> Add Student</a></p>
 	</body>
 </html>
