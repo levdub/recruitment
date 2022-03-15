@@ -1,3 +1,4 @@
+/*This is the file that connects to the database*/
 <?php
 
 	//set param for pdo data obj
