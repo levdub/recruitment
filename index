@@ -1,4 +1,4 @@
-
+/*This is the main page after login where students are displayed, need to add a search bar and the ability to search for students, and buttons with links to add and edit students. */
 <?php
 
 //connect to DB 
@@ -107,11 +107,18 @@ $statement->closeCursor();
 					<th>Birth Date</th>
 					<th>Phone Number</th>
 					<th>Email</th>
-					<th>local</th>
-					<th>Address</th>
-					<th>Term</th>
-					<th>Days til next TP</th>
+					<th>City</th>
+					<th>State</th>
+					<th>Domestic</th>
+					<th>Active</th>
+					<th>Follow-Up Date</th>
 					<th>Status</th>
+					<th>Major</th>
+					<th>School</th>
+					<th>House Number</th>
+					<th>Street Name</th>
+					<th>Street Type</th>
+					<th>GPA</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -126,11 +133,18 @@ $statement->closeCursor();
 					<td><?php echo $student['birthdate']; ?></td>
 					<td><?php echo $student['phoneNum']; ?></td>
 					<td><?php echo $student['email']; ?></td>
-					<td><?php echo $student['local']; ?></td>
-					<td><?php echo $student['address']; ?></td>
-					<td><?php echo $student['term']; ?></td>
-					<td><?php echo $student['activitiesCounter']; ?></td>
+					<td><?php echo $student['city']; ?></td>
+					<td><?php echo $student['state']; ?></td>
+					<td><?php echo $student['domestic']; ?></td>
+					<td><?php echo $student['active']; ?></td>
+					<td><?php echo $student['followupDate']; ?></td>
 					<td><?php echo $student['status']; ?></td>
+					<td><?php echo $student['major']; ?></td>
+					<td><?php echo $student['school']; ?></td>
+					<td><?php echo $student['houseNumber']; ?></td>
+					<td><?php echo $student['streetName']; ?></td>
+					<td><?php echo $student['streetType']; ?></td>
+					<td><?php echo $student['GPA']; ?></td>
 
 				</tr>
 				<?php endforeach; ?>
