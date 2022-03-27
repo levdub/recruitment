@@ -87,5 +87,9 @@ $statement->closeCursor();
 				<?php endforeach; ?>
 			</tbody>
 		</table>
+		<ul id="nav">
+			<li><a href="add_student_form.php">Add Student</a></li>
+ 
+        	 </ul>
 		</body>
 	</html>
