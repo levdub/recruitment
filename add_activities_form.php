@@ -17,9 +17,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header">
-                        <h2>Contact Form</h2>
+                        <h2>Activities Form</h2>
                     </div>
-                    <p>Please fill this form and submit to add employee record to the database.</p>
+                    <p>Submit to add activity record to the database.</p>
                     <form action="activitydb.php" method="post">
                         <div class="form-group">
                             <label>Activity Name</label>
