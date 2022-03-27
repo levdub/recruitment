@@ -20,7 +20,7 @@
                         <h2>Student Form</h2>
                     </div>
                     <p>Please fill this form and submit to add student record to the database.</p>
-                    <form action="studentsdb.php" method="post">
+                    <form action="add_student.php" method="post">
 						<div class="form-group">
                             <label>First name</label>
                             <input type="text" name="fname" class="form-control">
