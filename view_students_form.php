@@ -55,6 +55,7 @@ $statement->closeCursor();
 					<th>House Number</th>
 					<th>Street Name</th>
 					<th>Street Type</th>
+					<th>ZIP</th>
 					<th>GPA</th>
 				</tr>
 			</thead>
@@ -81,6 +82,7 @@ $statement->closeCursor();
 					<td><?php echo $student['houseNumber']; ?></td>
 					<td><?php echo $student['streetName']; ?></td>
 					<td><?php echo $student['streetType']; ?></td>
+					<td><?php echo $student['zip']; ?></td>
 					<td><?php echo $student['GPA']; ?></td>
 
 				</tr>
