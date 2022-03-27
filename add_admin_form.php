@@ -20,7 +20,7 @@
                         <h2>Contact Form</h2>
                     </div>
                     <p>Please fill this form and submit to add employee record to the database.</p>
-                    <form action="usersdb.php" method="post">
+                    <form action="add_admin.php" method="post">
                         <div class="form-group">
                             <label>User Name</label>
                             <input type="text" name="name" class="form-control">
