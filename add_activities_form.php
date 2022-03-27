@@ -20,7 +20,7 @@
                         <h2>Activities Form</h2>
                     </div>
                     <p>Submit to add activity record to the database.</p>
-                    <form action="activitydb.php" method="post">
+                    <form action="add_activities_form.php" method="post">
                         <div class="form-group">
                             <label>Activity Name</label>
                             <input type="text" name="name" class="form-control">
