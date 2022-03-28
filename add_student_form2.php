@@ -22,11 +22,11 @@
                     <p>Please fill this form and submit to add student record to the database.</p>
                     <form action="add_student.php" method="post">
 						<div class="form-group">
-                            <label>First name</label>
+                            <label>First Name</label>
                             <input type="text" name="fname" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>Last name</label>
+                            <label>Last Name</label>
                             <input type="text" name="lname" class="form-control">
                         </div>
 						<div class="form-group">
@@ -34,11 +34,11 @@
                             <input type="email" name="email" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>Phone number</label>
+                            <label>Phone Number</label>
                             <input type="text" name="phone" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>Jag number</label>
+                            <label>Jag Number</label>
                             <input type="text" name="jnum" class="form-control">
                         </div>
 						<div class="form-group">
@@ -50,31 +50,31 @@
                             <input type="text" name="major" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>school</label>
+                            <label>School</label>
                             <input type="text" name="school" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>status</label>
+                            <label>Status</label>
                             <input type="text" name="status" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>expected term</label>
+                            <label>Expected Term</label>
                             <input type="text" name="term" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>house number</label>
+                            <label>House Number</label>
                             <input type="text" name="house" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>street</label>
+                            <label>Street</label>
                             <input type="text" name="street" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>street type</label>
+                            <label>Street Type</label>
                             <input type="text" name="streetType" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>city</label>
+                            <label>City</label>
                             <input type="text" name="city" class="form-control">
                         </div>
 						<div class="form-group">
@@ -98,7 +98,7 @@
                             <input type="checkbox" name="active" value="1" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>domestic?</label>
+                            <label>Domestic?</label>
                             <input type="checkbox" name="domestic" value="1" class="form-control">
                         </div>
                         <input type="submit" class="btn btn-primary" name="submit" value="Submit">
