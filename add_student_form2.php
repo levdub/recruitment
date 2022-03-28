@@ -22,71 +22,71 @@
                     <p>Please fill this form and submit to add student record to the database.</p>
                     <form action="add_student.php" method="post">
 						<div class="form-group">
-                            <label>First Name</label>
+                            <label>First Name:</label>
                             <input type="text" name="fname" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>Last Name</label>
+                            <label>Last Name:</label>
                             <input type="text" name="lname" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>Email</label>
+                            <label>Email:</label>
                             <input type="email" name="email" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>Phone Number</label>
+                            <label>Phone Number:</label>
                             <input type="text" name="phone" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>Jag Number</label>
+                            <label>Jag Number:</label>
                             <input type="text" name="jnum" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>GPA</label>
+                            <label>GPA:</label>
                             <input type="text" name="gpa" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>Major</label>
+                            <label>Major:</label>
                             <input type="text" name="major" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>School</label>
+                            <label>School:</label>
                             <input type="text" name="school" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>Status</label>
+                            <label>Status:</label>
                             <input type="text" name="status" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>Expected Term</label>
+                            <label>Expected Term:</label>
                             <input type="text" name="term" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>House Number</label>
+                            <label>House Number:</label>
                             <input type="text" name="house" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>Street</label>
+                            <label>Street:</label>
                             <input type="text" name="street" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>Street Type</label>
+                            <label>Street Type:</label>
                             <input type="text" name="streetType" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>City</label>
+                            <label>City:</label>
                             <input type="text" name="city" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>State</label>
+                            <label>State:</label>
                             <input type="text" name="state" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>Zip</label>
+                            <label>Zip:</label>
                             <input type="text" name="zip" class="form-control">
                         </div>
 						<div class="form-group">
-                            <label>Birthdate</label>
+                            <label>Birthdate:</label>
                             <input type="date" name="bday" class="form-control">
                         </div>
 						<div class="form-group">
