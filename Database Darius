@@ -1,0 +1,21 @@
+/*This is the file that connects to the database*/
+<?php
+
+	//set param for pdo data obj
+	$dsn='mysql:host=localhost;dbname=recruitment';
+	$username='mgs_user';
+	$password='pa55word';
+	
+	//pdo data obj within a try catch block
+	try{
+		$db = new PDO ($dsn, $username, $password);
+	}catch (PDOException $e) {
+		$error_message = $e->getMessage();
+		include ('database_error.php');
+		exit();
+	}
+
+
+
+
+?>
