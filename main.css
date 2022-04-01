@@ -1,18 +1,56 @@
 /*the main stylesheet for the project*/
- label {
-    cursor: pointer;
-    display: inline-block;
-    padding: 3px 6px;
-    text-align:right;
-    width: 150px;
-    vertical-align: top;
-
+/*This is the code for the tables visuals
+html{
+    background: darkblue;
 }
 
-input{
-    font-size:inherit;
-    
-} 
+.content-table{
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 3em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,16);
+}
+
+.content-table thead tr{
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td{
+    padding: 12px 15px;
+    font-size: 20px;
+}
+
+.content-table tbody tr{
+    border-bottom: 1px solid lightgray;
+    font-size: 20px;
+    background-color: white;
+}
+
+.content-table tbody tr:nth-child(even)  {
+background-color: aqua;
+}
+
+.content-table tbody tr:nth-of-type(even){
+    background-color: lightgray;
+}
+
+.content-table tbody tr:last-of-type{
+    border-bottom:2px solid #009879
+}
+
+.content-table tbody tr.active-row{
+    font-weight:bold;
+    color:#009879;
+}
+
 
 
 /*feel free to edit, just testing out things.
