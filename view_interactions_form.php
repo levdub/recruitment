@@ -1,9 +1,10 @@
 <?php
-//connect to DB 
+//connect to DB
 require 'database.php';
+require_once 'header.php';
 
 //write a query to retrieve all communications
-$query = 'SELECT * FROM interactions ORDER BY studentID';
+$query = 'SELECT * FROM communications ORDER BY studentID';
 
 //prepare SQL statement for execution, returning PDO statement object.
 //data access in try catch block
@@ -36,7 +37,7 @@ $statement->closeCursor();
 					<th>Student ID</th>
 					<th>Comments</th>
 					<th>Date</th>
-					
+
 				</tr>
 			</thead>
 			<tbody>
