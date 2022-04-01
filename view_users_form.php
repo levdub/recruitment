@@ -1,6 +1,8 @@
 <?php
-//connect to DB 
+//connect to DB
 require 'database.php';
+require 'database.php';
+require_once 'header.php';
 
 //write a query to retrieve all users
 $query = 'SELECT * FROM users ORDER BY username';
