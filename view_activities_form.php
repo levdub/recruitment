@@ -1,6 +1,7 @@
 <?php
-//connect to DB 
+//connect to DB
 require 'database.php';
+require_once 'header.php';
 
 //write a query to retrieve all activities
 $query = 'SELECT * FROM activities ORDER BY activityName';
