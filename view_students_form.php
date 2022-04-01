@@ -1,8 +1,8 @@
-//display all students
 <?php
-
-//connect to DB 
+//displays all students
+//connect to DB
 require 'database.php';
+require_once 'header.php';
 
 //write a query to retrieve all students
 $query = 'SELECT * FROM students ORDER BY lastName';
