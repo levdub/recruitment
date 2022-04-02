@@ -12,6 +12,14 @@
     </style>
 </head>
 <body>
+
+<div class="w3-sidebar w3-blue w3-bar-block" style="width:25%">
+  <h3 class="w3-bar-item">Menu</h3>
+  <a href="view_users_forms.php" class="w3-bar-item w3-button">Display Admins</a>
+  <a href="add_admin_form.php" class="w3-bar-item w3-button">Add Admins</a>
+  <a href="edit_admin_form.php" class="w3-bar-item w3-button">Edit Admins</a>
+</div>
+
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
