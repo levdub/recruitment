@@ -1,11 +1,12 @@
+
 <?php
+//displays all students
 //connect to DB
-require 'database.php';
 require 'database.php';
 require_once 'header.php';
 
-//write a query to retrieve all users
-$query = 'SELECT * FROM users ORDER BY username';
+//write a query to retrieve all students
+$query = 'SELECT * FROM students ORDER BY lastName';
 
 //prepare SQL statement for execution, returning PDO statement object.
 //data access in try catch block
@@ -16,7 +17,7 @@ try{
 $statement->execute();
 
 //retrieve data from data set
-$users = $statement->fetchAll();
+$students = $statement->fetchAll();
 
 //close connection
 $statement->closeCursor();
@@ -27,7 +28,7 @@ $statement->closeCursor();
 ?>
 
 <html>
-<head>
+	<head>
 	<style>
 	.flex-container {
 		display: flex;
@@ -75,43 +76,39 @@ $statement->closeCursor();
 
 		<title> Recruitment DB</title>
 
-</head>
+	</head>
 
-	<div class="w3-cmain w3-border w3-round" style="overflow: auto">	
+<div class="w3-cmain w3-border w3-round" style="overflow: auto">
+
+
 <body>
-	<h2> Users </h2>
-         <!-- This button sends user to the add user form -->
-		<form action="add_admin_form.php">
-			<button class="btn"><i class="fa fa-plus"></i></button> <p2> Add User <p2>
+		<h2> Students</h2>
+		<form action="add_student_form.php">
+			<button class="btn"><i class="fa fa-plus"></i></button> <p2> Add Student <p2>
 		</form>
 		<!--display student table-->
-		<input type ="text" id= "myInput" onkeyup="myFunction()" placeholder ="Search Users Name...">
-		
-
-
-		<table id="myTable">
-			<thead>
-				<tr class="header">
-					<th>UserID</th>
-					<th>Firstname</th>
-					<th>Lastname</th>
-					<th>Username</th>
+		<input type ="text" id= "myInput" onkeyup="myFunction()" placeholder ="Search Student Name...">
+		<table id= "myTable">
+			<tr class ="header">
+					<th>Options</th>
+					<th>Last Name</th>
+					<th>First Name</th>
+					<th>Jag Number</th>
+					<th>Phone Number</th>
 					<th>Email</th>
-					<th>Password</th>
-				<!-- password should never be displayed anywhere. Im using it here just to show it. -->
-					<th>Admin</th>
+					<th>Follow-Up Date</th>
+					<th>Status</th>
+					<th>Major</th>
 				</tr>
-			</thead>
-			<tbody>
 				<!--query the DB and return info into an array with fetch all-->
-				<!--loop thru array which is the result of query and display communications-->
-				<?php foreach ($users as $user) :?>
-				<tr>	
+				<!--loop thru array which is the result of query and display students-->
+				<?php foreach ($students as $student) :?>
+				<tr>
 					<td>
 						<div class="flex-container">
 
 						<form name="profile" id="profile" action="profile.php">
-							<input type='hidden' id = 'profile' name='display' value=<?php echo$user['userID']; ?>/>
+							<input type='hidden' id = 'profile' name='display' value=<?php echo$student['studentID']; ?>/>
 							<button class="btn"><i class="fa fa-eye"></i></button>
 						</form>
 						<form action="edit.php" method="GET">
@@ -124,37 +121,39 @@ $statement->closeCursor();
 					</div>
 					</div>
 				</td>
-					<td><?php echo $user['userID']; ?></td>
-					<td><?php echo $user['firstName']; ?></td>
-					<td><?php echo $user['lastName']; ?></td>
-					<td><?php echo $user['username']; ?></td>
-					<td><?php echo $user['email']; ?></td>
-					<td><?php echo $user['password']; ?></td>
-					<td><?php echo $user['privledgedRights']; ?></td>
+					<td><?php echo $student['lastName']; ?></td>
+					<td><?php echo $student['firstName']; ?></td>
+					<td><?php echo $student['jagNum']; ?></td>
+					<td><?php echo $student['phoneNum']; ?></td>
+					<td><?php echo $student['email']; ?></td>
+					<td><?php echo $student['followupDate']; ?></td>
+					<td><?php echo $student['status']; ?></td>
+					<td><?php echo $student['major']; ?></td>
+
 				</tr>
 				<?php endforeach; ?>
-			</tbody>
 		</table>
-
-<!-- funtionality for the search bar -->
-<script>
-	function myFunction() {
-  	var input, filter, table, tr, td, i, txtValue;
-  	input = document.getElementById("myInput");
-  	filter = input.value.toUpperCase();
-  	table = document.getElementById("myTable");
-  	tr = table.getElementsByTagName("tr");
-  	for (i = 0; i < tr.length; i++) {
+		<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[1,2];
-    	if (td) {
-      	txtValue = td.textContent || td.innerText;
-      	if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        	tr[i].style.display = "";
-      	} else {
-        	tr[i].style.display = "none";
-      	}
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
     }
   }
 }
 </script>
-</body>
+		</body>
+	</div>
+</div>
+	</html>

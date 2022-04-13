@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="container-fluid">
+        <div class=".container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header">
@@ -40,7 +40,7 @@
                         <input type="submit" class="btn btn-primary" name="submit" value="Submit">
                     </form>
                 </div>
-            </div>        
+            </div>
         </div>
     </div>
 </body>

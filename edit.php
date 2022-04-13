@@ -43,7 +43,7 @@ if (mysqli_num_rows($result) == 0) {
     $gpa = mysqli_real_escape_string($conn, $_POST['gpa']);
     $major = mysqli_real_escape_string($conn, $_POST['major']);
     $school = mysqli_real_escape_string($conn, $_POST['school']);
-    $status = mysqli_real_escape_string($conn, $_POST['status']);
+    $status = mysqli_real_escape_string($conn, $_POST['Status']);
     $term = mysqli_real_escape_string($conn, $_POST['term']);
     $house = mysqli_real_escape_string($conn, $_POST['house']);
     $street = mysqli_real_escape_string($conn, $_POST['street']);
@@ -52,17 +52,19 @@ if (mysqli_num_rows($result) == 0) {
     $state = mysqli_real_escape_string($conn, $_POST['state']);
     $zip = mysqli_real_escape_string($conn, $_POST['zip']);
     $bday = mysqli_real_escape_string($conn, $_POST['bday']);
+    $Birthdate = date("Y-m-d",strtotime($bday));
     $followup = mysqli_real_escape_string($conn, $_POST['followup']);
-    $active = mysqli_real_escape_string($conn, $_POST['active']);
-    $domestic = mysqli_real_escape_string($conn, $_POST['domestic']);
+    $FollowDate = date("Y-m-d",strtotime($followup));
+    $active = $_POST['Active'];
+    $domestic = mysqli_real_escape_string($conn, $_POST['Area']);
 
     $sql2 = "UPDATE students SET phoneNum = '$phone', email = '$email', firstName = '$fname', lastName = '$lname',jagNum  = '$jnum', GPA = '$gpa',major  = '$major', school = '$school',status  = '$status', term = '$term',houseNumber  = '$house',
-    streetName = 'street', streetType = '$streetType', city = '$city', state = '$state', zip = '$zip', birthdate = '$bday', followupDate = '$followup', active = '$active', domestic = '$domestic' WHERE studentID = $id";
-    if (mysqli_query($conn, $sql2)) {
-           echo '<meta http-equiv="refresh" content="0">';
-       } else {
-           echo "failed to edit." . mysqli_connect_error();
-         }
+    streetName = 'street', streetType = '$streetType', city = '$city', state = '$state', zip = '$zip', birthdate = '$Birthdate', followupDate = '$FollowDate', active = '$active', domestic = '$domestic' WHERE studentID = $id";
+   if (mysqli_query($conn, $sql2)) {
+         echo '<meta http-equiv="refresh" content="0">';
+     } else {
+          echo "failed to edit." . mysqli_connect_error();
+        }
 }
   ?>
 
@@ -108,7 +110,12 @@ if (mysqli_num_rows($result) == 0) {
          <p>
          <p>
              <label>Status</label>
-             <input type="text" class="w3-input w3-border" name="status" value="<?php echo $status; ?>">
+             <select name="Status" id="status">
+             <option value = "Active">Active</option>
+             <option value = "Applied">Applied</option>
+             <option value = "Inactive">Inactive</option>
+             <option value = "Not Intrested">Not Intrested</option>
+           </select>
          <p>
          <p>
              <label>Term</label>
@@ -140,19 +147,26 @@ if (mysqli_num_rows($result) == 0) {
          <p>
          <p>
              <label>Date Of Birth</label>
-             <input type="text" class="w3-input w3-border" name="bday" value="<?php echo $bday; ?>">
+             <input type="date" name="bday" class="form-control" value="<?php echo $bday; ?>">
          <p>
          <p>
              <label>Follow UP</label>
-             <input type="text" class="w3-input w3-border" name="followup" value="<?php echo $followup; ?>">
+             <input type="date" name="followup" class="form-control" value="<?php echo $followup; ?>">
          <p>
          <p>
-             <label>Active</label>
-             <input type="text" class="w3-input w3-border" name="active" value="<?php echo $active; ?>">
+             <label>Active:</label></p>
+              <label for="">Active:</label></p>
+           <div class ="form-group">
+             <input type="radio" name="Active" value="yes" /> Yes
+             <input type="radio" name="Active" value="no" /> No
+           </div>
          <p>
          <p>
-             <label>Domestic</label>
-             <input type="text" class="w3-input w3-border" name="domestic" value="<?php echo $domestic; ?>">
+             <label>Country Area</label>
+             <select name="Area" id="area">
+             <option value = "Domestic Student">Domestic</option>
+             <option value = "International Student">International</option>
+           </select>
          <p>
          <p>
              <input type="submit" class="w3-btn w3-red w3-round" name="upd" value="Save edit">
@@ -160,3 +174,4 @@ if (mysqli_num_rows($result) == 0) {
        </div>
       </div>
     </div>
+  </form>

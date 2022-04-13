@@ -22,13 +22,17 @@
 .w3-theme-d3 {color:#fff !important; background-color:#193864 !important}
 .w3-theme-d4 {color:#fff !important; background-color:#153056 !important}
 .w3-theme-d5 {color:#fff !important; background-color:#122847 !important}
+
+  img {
+    width:100%
+  }
   </style>
 </head>
 
 <body>
 </head>
 <body>
-  <header class ="w3-containder w3-navy-blue">
+  <header class ="w3-containder w3-navy-blue" style="width=100%">
     <img src="images/SouthBar.jpg" style="width=100%">
   </header>
   <div class=" w3-container w3-theme-d1" style="width=100%, height=300px">
@@ -36,11 +40,10 @@
     </div>
   </div>
   <div class="w3-bar w3-border-gray w3-theme-d2 ">
-    <a href="index.php" class="w3-large w3-bar-item w3-button w3-theme-d1"> Home <i class="fa fa-home"></i></a>
+    <a href="menu.php" class="w3-large w3-bar-item w3-button w3-theme-d1"> Home <i class="fa fa-home"></i></a>
     <a href="view_activities_form.php" class="w3-bar-item w3-button w3-red">Activites</a>
     <a href="view_student_form.php" class="w3-bar-item w3-button w3-theme-d1">Students</a>
-    <a href="view_interactions_form.php" class="w3-bar-item w3-button w3-red">Communications</a>
-    <a href="view_users_form.php" class="w3-bar-item w3-button w3-theme-d1">Recruiters</a>
+    <a href="view_users_form.php" class="w3-bar-item w3-button w3-red">Recruiters</a>
     <a href="logout.php" class="w3-bar-item w3-button w3-red w3-right">Logout</a>
   </div>
 

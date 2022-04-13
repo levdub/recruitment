@@ -1,9 +1,13 @@
+<?php
+require 'database.php';
+require_once 'header.php';
+ ?>
 <html>
 	<head>
 		<title> Recruitment DB</title>
 		<link rel="stylesheet" type="text/css" href="main.css">
 	</head>
-	
+
 	<body>
 		<header>
 			<h1> Main Menu </h1>

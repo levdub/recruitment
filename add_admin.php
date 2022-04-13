@@ -1,7 +1,8 @@
 <?php
-include_once 'db.php';
+require 'database.php';
+require_once 'header.php';
 if(isset($_POST['submit']))
-{    
+{
      $name = $_POST['name'];
      $email = $_POST['email'];
      $password = $_POST['password'];
